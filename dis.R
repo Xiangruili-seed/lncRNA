@@ -49,3 +49,9 @@ pdf("/data/tusers/lixiangr/lncRNA/mouse/read_distance_none_zero.pdf")
 annotate_figure(p6, bottom=text_grob("Histogram of the distance to the nearest gene", color = "black", size = 18))
 dev.off()
 
+#########zero 
+length(c2c12[c2c12==0])/1584114
+length(cortex[cortex==0])/2719160
+length(forelimb_11[forelimb_11==0])/550746
+length(forelimb_13[forelimb_13==0])/702537
+length(hippocampus[hippocampus==0])/2775966
