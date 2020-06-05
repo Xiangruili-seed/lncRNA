@@ -1,7 +1,7 @@
 ####step1
 ###remove chr*_random and chrUn_* in gtf
 
-cat /data/tusers/lixiangr/lncRNA/mouse/ref/gencode.vM21.primary_assembly.annotation_UCSC_names.gtf|awk '{if ($3=="gene") print $0}'|awk '{if ($7=="+") print $1"\t"$4-500"\t"$4+500"\t"$7; else if ($7=="-") print $1"\t"$5-500"\t"$5+500"\t"$7}'|awk '{if ($2<0) print $1"\t"0"\t"$3"\t"$4; else print $0}'|awk '$1!~/_/{print $0}' |sort -k1,1 -k2,2n -u >/data/tusers/lixiangr/lncRNA/mouse/ref/sorted_gene.bed
+cat /data/tusers/lixiangr/lncRNA/mouse/ref/gencode.vM18.annotation.gtf|awk '{if ($3=="transcript") print $0}'|awk '{if ($7=="+") print $1"\t"$4"\t"$4+1"\t.\t.\t"$7; else if ($7=="-") print $1"\t"$5-1"\t"$5"\t.\t.\t"$7}'|awk '$1!~/_/{print $0}' |sort -k1,1 -k2,2n -u >/data/tusers/lixiangr/lncRNA/mouse/ref/sorted_gene.bed
 
 ############step2 download bam and get reads length, reads distance
 nohup bash /data/tusers/lixiangr/lncRNA/mouse/un.sh forelimb_13 ENCFF062GDW &
