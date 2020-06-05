@@ -11,8 +11,8 @@ nohup bash /data/tusers/lixiangr/lncRNA/mouse/rep.sh cortex ENCFF050KJW ENCFF296
 nohup bash /data/tusers/lixiangr/lncRNA/mouse/rep.sh C2C12 ENCFF116XKI ENCFF200LKU &
 
 ############step3 Rcodes for Histogram
- nohup Rscript dis.R &
- nohup Rscript length.R &
+ nohup Rscript distance.R &
+ nohup Rscript length_all.R &
 
 
 
